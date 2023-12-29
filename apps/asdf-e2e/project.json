@@ -1,0 +1,30 @@
+{
+  "name": "asdf-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/asdf-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/asdf-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "asdf:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "asdf:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "asdf:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "implicitDependencies": ["asdf"],
+  "tags": []
+}
