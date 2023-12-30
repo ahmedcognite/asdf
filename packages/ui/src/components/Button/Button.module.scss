@@ -1,0 +1,9 @@
+.button {
+  font-weight: normal;
+  padding: 12px 24px;
+
+  &.full-width {
+    display: block;
+    width: 100%;
+  }
+}
