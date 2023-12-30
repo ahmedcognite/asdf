@@ -15,7 +15,7 @@ node_modules
 .classpath
 .c9/
 *.launch
-.settings/
+.settings/`
 *.sublime-workspace
 
 # IDE - VSCode

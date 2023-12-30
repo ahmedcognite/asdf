@@ -1,12 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
 
-import NxWelcome from './nx-welcome';
+import { Button } from '@asdf/ui';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="asdf" />
+      <Button>Click me!</Button>
     </div>
   );
 }
