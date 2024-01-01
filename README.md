@@ -9,3 +9,4 @@ List of things being practiced
 - Created ui lib via nx
 - Added storybook in ui lib via nx
 - Added i18n translations
+- Added locize integration
