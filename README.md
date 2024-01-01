@@ -8,3 +8,4 @@ List of things being practiced
 - Created react app via nx
 - Created ui lib via nx
 - Added storybook in ui lib via nx
+- Added i18n translations
