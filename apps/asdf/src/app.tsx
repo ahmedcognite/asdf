@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useTranslation } from 'react-i18next';
-import styles from './app.module.scss';
+// import styles from './app.module.scss';
 
 import { Button } from '@asdf/ui';
 
@@ -9,6 +9,7 @@ export function App() {
     t,
     i18n: { changeLanguage, language },
   } = useTranslation();
+
   return (
     <div>
       <Button
