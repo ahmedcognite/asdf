@@ -13,10 +13,9 @@ export function App() {
   return (
     <div>
       <Button
-        onClick={() => {
-          console.log(language);
-          language === 'en' ? changeLanguage('nb') : changeLanguage('en');
-        }}
+        onClick={() =>
+          language === 'en' ? changeLanguage('nb') : changeLanguage('en')
+        }
       >
         {t('generic_button_text')}
       </Button>

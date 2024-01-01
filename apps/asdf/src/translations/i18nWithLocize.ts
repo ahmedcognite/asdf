@@ -3,23 +3,10 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import LocizeBackend from 'i18next-locize-backend';
 
-// import enJSON from './locale/en.json';
-// import nbJSON from './locale/nb.json';
-
 const LOCIZE_PROJECT_ID = process.env.LOCIZE_PROJECT_ID;
 const LOCIZE_API_KEY = process.env.LOCIZE_API_KEY;
 
 export const initI18n = () => {
-  // i18n.use(initReactI18next).init({
-  //   resources: {
-  //     // Where we're gonna put translations' files
-  //     en: { ...enJSON },
-  //     nb: { ...nbJSON },
-  //   },
-  //   lng: 'en', // Set the initial language of the App
-  //   fallbackLng: 'en', // Set the initial language of the App
-  // });
-
   // taken from:
   // https://github.com/locize/react-tutorial/blob/main/step_2/src/i18n.js
   i18n
