@@ -1,0 +1,10 @@
+name: Verify PR Build
+
+on: [push]
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "yarn install"
+      - run: echo "nx affected -t build"
