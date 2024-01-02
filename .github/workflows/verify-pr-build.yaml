@@ -6,5 +6,6 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - run: pwd
       - run: yarn install
       - run: npx nx affected -t build
