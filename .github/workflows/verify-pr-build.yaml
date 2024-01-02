@@ -7,5 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: pwd
+      - run: ls -la
       - run: yarn install
       - run: npx nx affected -t build
