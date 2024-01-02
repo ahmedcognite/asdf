@@ -10,8 +10,6 @@ export function App() {
     i18n: { changeLanguage, language },
   } = useTranslation();
 
-  console.log('language', language);
-
   return (
     <div>
       <Button
