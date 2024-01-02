@@ -21,5 +21,6 @@ jobs:
       # This line is needed for nx affected to work when CI is running on a PR
       - run: git branch --track main origin/main
 
+      - run: yarn install
       - run: npx nx format:check
       - run: npx nx affected -t lint,test,build --parallel=3
