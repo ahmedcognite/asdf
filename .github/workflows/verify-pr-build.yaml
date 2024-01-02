@@ -5,6 +5,8 @@ on:
       # Change this if your primary branch is not main
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   main:
