@@ -10,3 +10,4 @@ List of things being practiced
 - Added storybook in ui lib via nx
 - Added i18n translations
 - Added locize integration
+- Added github action to verify build of affected nx projects
