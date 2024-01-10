@@ -11,3 +11,4 @@ List of things being practiced
 - Added i18n translations
 - Added locize integration
 - Added github action to verify build of affected nx projects
+- Added Api class in sdk lib to provie an interfaace for fetching
