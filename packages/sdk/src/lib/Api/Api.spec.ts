@@ -2,8 +2,8 @@ import { Api } from './Api';
 
 describe('Api', () => {
   let api: Api;
-  const USERNAME = 'kminchelle';
-  const PASSWORD = '0lelplR';
+  const USERNAME = process.env['API_USERNAME'] || '';
+  const PASSWORD = process.env['API_PASSWORD'] || '';
 
   beforeAll(() => {
     api = new Api();
