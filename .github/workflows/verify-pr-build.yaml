@@ -23,14 +23,12 @@ jobs:
       - run: git branch --track main origin/main
 
       - name: Create .env file
-        env:
-          API_USERNAME: ${{ secrets.API_USERNAME }}
-          API_PASSWORD: ${{ secrets.API_PASSWORD }}
         run: |
           touch packages/sdk/.env
-          echo API_USERNAME=$API_USERNAME > packages/sdk/.env
-          echo API_PASSWORD=$API_PASSWORD > packages/sdk/.env
+          echo API_USERNAME=${{ secrets.API_USERNAME }} > packages/sdk/.env
+          echo API_PASSWORD=${{ secrets.API_PASSWORD }} > packages/sdk/.env
           cat packages/sdk/.env
+          pwd
 
       - run: npx nx format:check
       - run: npx nx affected -t lint,test,build --parallel=3
