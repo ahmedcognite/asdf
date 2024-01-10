@@ -7,6 +7,8 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
+    environment:
+      name: test
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,6 +30,7 @@ jobs:
           echo API_USERNAME=${{ secrets.API_USERNAME }} >> ./packages/sdk/.env
           echo API_PASSWORD=${{ secrets.API_PASSWORD }} >> ./packages/sdk/.env
           cat ./packages/sdk/.env
+          cat /home/runner/work/asdf/asdf/packages/sdk/.env
           pwd
 
       - run: npx nx format:check
