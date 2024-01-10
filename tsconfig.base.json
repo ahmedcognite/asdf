@@ -16,8 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@asdf/sdk": ["packages/sdk/src/index.ts"],
-      "@asdf/ui": ["packages/ui/src/index.ts"]
+      "@asdf/sdk": ["shared/sdk/src/index.ts"],
+      "@asdf/ui": ["shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
