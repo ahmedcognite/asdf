@@ -2,13 +2,13 @@
 
 Repo for practicing different tools
 
-List of things being practiced
+List of things done so far
 
-- Created NX workspace
-- Created react app via nx
-- Created ui lib via nx
-- Added storybook in ui lib via nx
-- Added i18n translations
-- Added locize integration
-- Added github action to verify build of affected nx projects
-- Added Api class in sdk lib to provie an interfaace for fetching
+- [x] Created nx workspace
+- [x] Created react app via nx
+- [x] Created ui lib via nx
+- [x] Added storybook in ui lib via nx
+- [x] Added i18n translations
+- [x] Added locize integration
+- [x] Added github action to verify lint, test & build of affected nx projects
+- [x] Added Api class in sdk lib to provide an interfaace for fetching

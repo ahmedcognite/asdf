@@ -24,9 +24,9 @@ jobs:
 
       - name: Create .env file
         run: |
-          touch ./packages/sdk/.env
-          echo API_USERNAME=${{ secrets.API_USERNAME }} >> ./packages/sdk/.env
-          echo API_PASSWORD=${{ secrets.API_PASSWORD }} >> ./packages/sdk/.env
+          touch ./shared/sdk/.env
+          echo API_USERNAME=${{ secrets.API_USERNAME }} >> ./shared/sdk/.env
+          echo API_PASSWORD=${{ secrets.API_PASSWORD }} >> ./shared/sdk/.env
 
       - run: npx nx format:check
       - run: npx nx affected -t lint,test,build --parallel=3
