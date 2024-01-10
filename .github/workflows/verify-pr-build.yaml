@@ -24,10 +24,10 @@ jobs:
 
       - name: Create .env file
         run: |
-          touch packages/sdk/.env
-          echo API_USERNAME=${{ secrets.API_USERNAME }} > packages/sdk/.env
-          echo API_PASSWORD=${{ secrets.API_PASSWORD }} > packages/sdk/.env
-          cat packages/sdk/.env
+          touch ./packages/sdk/.env
+          echo API_USERNAME=${{ secrets.API_USERNAME }} >> ./packages/sdk/.env
+          echo API_PASSWORD=${{ secrets.API_PASSWORD }} >> ./packages/sdk/.env
+          cat ./packages/sdk/.env
           pwd
 
       - run: npx nx format:check
