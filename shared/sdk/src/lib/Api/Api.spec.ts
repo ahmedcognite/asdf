@@ -1,4 +1,5 @@
 import { Api } from './Api';
+import { LocalStorageMock } from '../../utils/LocalStorageMock';
 
 describe('Api', () => {
   let api: Api;
@@ -6,6 +7,8 @@ describe('Api', () => {
   const PASSWORD = process.env['API_PASSWORD'] || '';
 
   beforeAll(() => {
+    global.localStorage = new LocalStorageMock();
+
     api = new Api();
   });
 
