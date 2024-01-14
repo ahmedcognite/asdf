@@ -4,7 +4,12 @@ import { Post, User } from './types';
 export class Api implements IApi {
   _user: User | null = null;
 
-  constructor() {}
+  constructor() {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      this._user = JSON.parse(storedUser);
+    }
+  }
 
   async login({
     username,

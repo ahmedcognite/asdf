@@ -1,0 +1,10 @@
+.posts-container {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  flex-direction: column;
+
+  > article {
+    margin: 0;
+  }
+}
