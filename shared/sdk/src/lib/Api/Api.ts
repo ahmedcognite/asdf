@@ -5,7 +5,8 @@ export class Api implements IApi {
   _user: User | null = null;
 
   constructor() {
-    const storedUser = localStorage.getItem('user');
+    const storedUser = localStorage?.getItem('user') ?? null;
+
     if (storedUser) {
       this._user = JSON.parse(storedUser);
     }
