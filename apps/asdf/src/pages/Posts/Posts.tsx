@@ -13,7 +13,7 @@ export const Posts: React.FC = () => {
   const [isAllFetched, setIsAllFetched] = useState(false);
   const [posts, setPosts] = useState<PostType[]>([]);
 
-  const { data, error, isLoading } = useQuery({
+  const { data, error, isLoading, isFetching } = useQuery({
     queryKey: ['posts', pageSize, currentPage],
     queryFn: () => api?.getAllPosts({ pageSize, pageNumber: currentPage }),
     placeholderData: keepPreviousData,
@@ -51,8 +51,9 @@ export const Posts: React.FC = () => {
           onClick={() => {
             if (!isAllFetched) setCurrentPage((prev) => prev + 1);
           }}
+          disabled={isFetching}
         >
-          Load more
+          {isFetching ? 'Loading...' : 'Load more'}
         </Button>
       ) : (
         <p>All posts have been fetched.</p>

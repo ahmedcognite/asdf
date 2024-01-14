@@ -38,6 +38,10 @@ export class Api implements IApi {
     }
   }
 
+  getUser(): User | null {
+    return this._user;
+  }
+
   async getLoggedInUserPosts(): Promise<Post[]> {
     try {
       if (!this._user)
