@@ -1,5 +1,11 @@
 /* MVP.css v1.14 - https://github.com/andybrewer/mvp */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --active-brightness: 0.85;
   --border-radius: 5px;

@@ -1,11 +1,13 @@
 import { IApi } from './IApi';
 import { Post, User } from './types';
 
+export const LS_USER_KEY = 'user';
+
 export class Api implements IApi {
   _user: User | null = null;
 
   constructor() {
-    const storedUser = localStorage?.getItem('user') ?? null;
+    const storedUser = localStorage?.getItem(LS_USER_KEY) ?? null;
 
     if (storedUser) {
       this._user = JSON.parse(storedUser);
@@ -29,13 +31,22 @@ export class Api implements IApi {
           // expiresInMins: 60, // optional
         }),
       });
+
       if (!res.ok) throw new Error(`${res.status} - ${res.statusText}`);
+
       const user: User = await res.json();
       this._user = user;
+
+      localStorage?.setItem(LS_USER_KEY, JSON.stringify(user));
+
       return Promise.resolve(user);
     } catch (err) {
       return Promise.reject(err);
     }
+  }
+  logout() {
+    localStorage?.removeItem(LS_USER_KEY);
+    this._user = null;
   }
 
   getUser(): User | null {
@@ -48,7 +59,6 @@ export class Api implements IApi {
         throw new Error(
           'Error: User is not logged in. Use `login({username: ..., password: ...})` method to login before calling this method.'
         );
-      console.log(this._user);
 
       const res = await fetch(
         `https://dummyjson.com/users/${this._user.id}/posts`,
