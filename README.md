@@ -12,4 +12,5 @@ List of things done so far
 - [x] Added locize integration
 - [x] Added github action to verify lint, test & build of affected nx projects
 - [x] Added Api class in sdk lib to provide an interfaace for fetching
-- [x] Added sequential/paginated (load more) fetching of data with react-query
+- [x] Added sequential (load more) fetching of data with react-query
+- [x] Added react-router-dom and auth guard

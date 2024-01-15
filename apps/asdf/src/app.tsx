@@ -1,33 +1,51 @@
 import styles from './app.module.scss';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { useTranslation } from 'react-i18next';
-// import styles from './app.module.scss';
-
-import { Button } from '@asdf/ui';
+// import { useTranslation } from 'react-i18next';
 import { ApiProvider } from './providers';
 import { Posts } from './components';
 import { QueryClientProvider } from './providers/ReactQueryProvider';
+import { Navbar } from './components/Navbar/Navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { AuthGuard } from './components/AuthGuard/AuthGuard';
+import { Login } from './pages/Login/Login';
+import { Logout } from './pages/Logout/Logout';
+import { User } from './pages/User/User';
 
 export function App() {
-  const {
-    t,
-    i18n: { changeLanguage, language },
-  } = useTranslation();
+  // const {
+  //   t,
+  //   i18n: { changeLanguage, language },
+  // } = useTranslation();
 
   return (
     <ApiProvider>
-      <div className={styles['app-container']}>
-        <Button
-          onClick={() =>
-            language === 'en' ? changeLanguage('nb') : changeLanguage('en')
-          }
-        >
-          {t('generic_button_text')}
-        </Button>
-        <QueryClientProvider>
-          <Posts />
-        </QueryClientProvider>
-      </div>
+      <QueryClientProvider>
+        <BrowserRouter basename="/">
+          <div className={styles['app-container']}>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Posts />} />
+              <Route path="/login" element={<Login />} />
+              <Route
+                path="/logout"
+                element={
+                  <AuthGuard redirectTo="/">
+                    <Logout />
+                  </AuthGuard>
+                }
+              />
+              <Route
+                path="/user"
+                element={
+                  <AuthGuard redirectTo="/">
+                    <User />
+                  </AuthGuard>
+                }
+              />
+            </Routes>
+            <Routes></Routes>
+          </div>
+        </BrowserRouter>
+      </QueryClientProvider>
     </ApiProvider>
   );
 }
