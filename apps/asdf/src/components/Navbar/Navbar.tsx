@@ -1,12 +1,8 @@
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.scss';
 import { AuthGuard } from '../AuthGuard/AuthGuard';
-import { ApiContext } from '../../providers';
-import { useContext } from 'react';
 
 export const Navbar: React.FC = () => {
-  const { api } = useContext(ApiContext);
-
   return (
     <nav className={styles.navbar}>
       <ul>
