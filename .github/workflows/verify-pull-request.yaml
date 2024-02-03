@@ -29,4 +29,4 @@ jobs:
           echo API_PASSWORD=${{ secrets.API_PASSWORD }} >> ./shared/sdk/.env
 
       - run: npx nx format:check
-      - run: npx nx affected -t lint,test,build --parallel=3
+      - run: npx nx affected -t lint,test,build,build-storybook,e2e --parallel=3
