@@ -22,11 +22,14 @@ jobs:
       # This line is needed for nx affected to work when CI is running on a PR
       - run: git branch --track main origin/main
 
-      - name: Create .env file
+      - name: Create .env files
         run: |
           touch ./shared/sdk/.env
           echo API_USERNAME=${{ secrets.API_USERNAME }} >> ./shared/sdk/.env
           echo API_PASSWORD=${{ secrets.API_PASSWORD }} >> ./shared/sdk/.env
+          touch ./apps/asdf-e2e/.env
+          echo API_USERNAME=${{ secrets.API_USERNAME }} >> ./apps/asdf-e2e/.env
+          echo API_PASSWORD=${{ secrets.API_PASSWORD }} >> ./apps/asdf-e2e/.env
 
       - run: npx nx format:check
-      - run: npx nx affected -t lint,test,build --parallel=3
+      - run: npx nx affected -t lint,test,build,build-storybook,e2e --parallel=3

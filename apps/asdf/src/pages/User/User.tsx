@@ -5,11 +5,12 @@ import { UserProps } from './types';
 
 export const User: React.FC<UserProps> = () => {
   const { api } = useContext(ApiContext);
+  const user = { ...api?.getUser(), token: '*****' };
 
   if (api === null) return <p>Loading...</p>;
 
   return (
-    <div className={styles['user-page']}>
+    <div className={styles['user-page']} data-testid="user-info-container">
       <pre
         style={{
           wordWrap: 'break-word',
@@ -23,7 +24,7 @@ export const User: React.FC<UserProps> = () => {
       >
         <code>
           <br />
-          {JSON.stringify(api.getUser(), null, 4)}
+          {JSON.stringify(user, null, 4)}
           <br />
           <br />
         </code>

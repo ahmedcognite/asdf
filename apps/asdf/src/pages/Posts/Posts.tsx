@@ -34,7 +34,7 @@ export const Posts: React.FC = () => {
   if (error) return <p>Something went wrong...</p>;
 
   return (
-    <div className={styles['posts-container']}>
+    <div className={styles['posts-container']} data-testid="posts-container">
       {posts.map((post) => (
         <Post
           key={post.id}

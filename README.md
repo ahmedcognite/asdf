@@ -14,3 +14,5 @@ List of things done so far
 - [x] Added Api class in sdk lib to provide an interfaace for fetching
 - [x] Added sequential (load more) fetching of data with react-query
 - [x] Added react-router-dom and auth guard
+- [x] Added cypress tests
+- [x] Added e2e target for nx affected to github action for pr check
